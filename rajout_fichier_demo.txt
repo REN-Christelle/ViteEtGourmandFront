@@ -1,0 +1,15 @@
+J'ai rajouté un fichier text pour te faire une démo
+
+Dans un terminal tu fais :
+git status ==> te permet de voir les modifications 
+git add "fichier / dossier" ==> te permet d'ajouter un dossier ou un fichier dans ton dépot local
+git commit -m "Ce que tu as fait en ajout"
+git push -u origin main
+
+A noter qu'il faut que tu config ton compte une fois pour commit ensuite : 
+git config --global user.email kokorofree7@gmail.com
+git config --global user.name Limesfield
+
+NB : le git add marche autant pour l'ajout que la suppression d'un fichier
+
+Pour redescendre des modif sur un autre pc : git pull 
