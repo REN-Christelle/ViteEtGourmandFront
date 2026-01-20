@@ -13,5 +13,3 @@ git config --global user.name Limesfield
 NB : le git add marche autant pour l'ajout que la suppression d'un fichier
 
 Pour redescendre des modif sur un autre pc : git pull 
-------------------
-Modif 
