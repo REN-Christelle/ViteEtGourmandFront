@@ -1,0 +1,12 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won’t be available)
+
+$white: #FFF5ED;
+
+$font-family-sans-serif: "Roboto Condensed", sans-serif !default;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
