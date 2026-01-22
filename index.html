@@ -9,41 +9,59 @@
     <title>Document</title>
 </head>
 <body>
-    
     <header>
-        <header>
-        <nav class="navbar navbar-expand-lg bg-white">
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="/">Vite & Gourmand</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-6 mb-2 mb-lg-0">
+              <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
                   <li class="nav-item">
                     <a class="nav-link" href="/">Accueil</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/galerie">Menu</a>
+                    <a class="nav-link" href="#">Menu</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                   </li>
-                  <li class="nav-item">
-                  </li>
                 </ul>
               </div>
             </div>
-          </nav>
-    </header>
+        </nav>
     </header>
 
-    <button class="btn btn-primary">Cliquez ici</i></button>
     <main id="main-page">
         <!--Le contenu de la page sera injectée ici-->
     </main>
 
-    <footer>Le footer de mon site</footer>
+    <footer class="bg-primary text-white text-center footer">
+      <div class="row">
+        <div class="col-4">
+          <h3>Informations</h3>
+          <p>5 Rue Lucien Faure, 33300 Bordeaux<br>
+             05 01 01 01 01<br>
+             Lundi - Dimanche de 10h à 20h<br>
+             contact@vitegourmand.fr
+          </p>
+        </div>
+        <div class="col-4">
+          <h3>Nos conditions</h3>
+          <p>Mentions légales<br>
+             Politiques de confidentialité<br>
+             Conditions générales de ventes
+          </p>
+        </div>
+        <div class="col-4">
+          <h3>Vite & Gourmand</h3>
+        <p>Entreprise spécialisée et passionnée dans la prestation événementielle <br>
+           avec des produits de qualité et un menu en constante évolution</p>
+        </div>
+      </div>
+      
+    </footer>
 
     <script type="module" src="./Router/Router.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
