@@ -79,6 +79,8 @@
     <div class="d-grid gap-2 justify-content-md-end">
             <a href="#" class="btn btn-secondary me-md-4">En savoir plus</a>
     </div>
+    <p><button type="button" class="btn btn-secondary" data-show="admin employe" data-bs-toggle="modal" data-bs-target="#EditionMenuModal">Modifier le menu</button></p>
+    <p><button type="button" class="btn btn-danger" data-show="admin employe" data-bs-toggle="modal" data-bs-target="#DeleteMenuModal">Supprimer le menu</button></p>
 </div>
 
 <br>
@@ -138,6 +140,8 @@
     <div class="d-grid gap-2 justify-content-md-end">
         <a href="#" class="btn btn-secondary me-md-4">En savoir plus</a>
     </div>
+    <p><button type="button" class="btn btn-secondary" data-show="admin" data-show="employé" data-bs-toggle="modal" data-bs-target="#EditionMenuModal">Modifier le menu</button></p>
+    <p><button type="button" class="btn btn-danger" data-show="admin" data-show="employé" data-bs-toggle="modal" data-bs-target="#DeleteMenuModal">Supprimer le menu</button></p>
 </div>
 
 <br>
@@ -196,6 +200,8 @@
     <div class="d-grid gap-2 justify-content-md-end">
         <a href="#" class="btn btn-secondary me-md-4">En savoir plus</a>
     </div>
+    <p><button type="button" class="btn btn-secondary" data-show="admin" data-show="employé" data-bs-toggle="modal" data-bs-target="#EditionMenuModal">Modifier le menu</button></p>
+    <p><button type="button" class="btn btn-danger" data-show="admin" data-show="employé" data-bs-toggle="modal" data-bs-target="#DeleteMenuModal">Supprimer le menu</button></p>
 </div>
 
 <br>
@@ -255,6 +261,8 @@
     <div class="d-grid gap-2 justify-content-md-end">
         <a href="#" class="btn btn-secondary me-md-4">En savoir plus</a>
     </div>
+    <p><button type="button" class="btn btn-secondary" data-show="admin" data-show="employé" data-bs-toggle="modal" data-bs-target="#EditionMenuModal">Modifier le menu</button></p>
+    <p><button type="button" class="btn btn-danger" data-show="admin" data-show="employé" data-bs-toggle="modal" data-bs-target="#DeleteMenuModal">Supprimer le menu</button></p>
 </div>
 
 <br>
@@ -314,4 +322,78 @@
     <div class="d-grid gap-2 justify-content-md-end">
         <a href="#" class="btn btn-secondary me-md-4">En savoir plus</a>
     </div>
+    <p><button type="button" class="btn btn-secondary" data-show="admin" data-show="employé" data-bs-toggle="modal" data-bs-target="#EditionMenuModal">Modifier le menu</button></p>
+    <p><button type="button" class="btn btn-danger" data-show="admin" data-show="employé" data-bs-toggle="modal" data-bs-target="#DeleteMenuModal">Supprimer le menu</button></p>
+</div>
+
+
+<!-- Modal édition menu -->
+<div class="modal fade" id="EditionMenuModal" tabindex="-1" aria-labelledby="EditionMenuModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="EditionMenuModalLabel">Edition Menu</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <label for="NameMenuInput" class="form-label">Nom de menu</label>
+                <input type="text" class="form-control" id="NameMenuInput" placeholder="Sans Gluten & Saveurs">
+            </div>
+            <div class="mb-3">
+                <label for="RegimeInput" class="form-label">Régime alimentaire</label>
+                <input type="text" class="form-control" id="RegimeInput" placeholder="Sans gluten">
+            </div>
+            <div class="mb-3">
+                <label for="EntreeMenuInput" class="form-label">Entrée</label>
+                <input type="text" class="form-control" id="EntreeMenuInput" placeholder="Salade de lentilles et légumes croquants">
+            </div>
+            <div class="mb-3">
+                <label for="PlatMenuInput" class="form-label">Plat</label>
+                <input type="text" class="form-control" id="PlatMenuInput" placeholder="Suprême de poulet grillée et purée de patates douces">
+            </div>
+            <div class="mb-3">
+                <label for="DessertMenuInput" class="form-label">Dessert</label>
+                <input type="text" class="form-control" id="DessertMenuInput" placeholder="Mousse au chocolat noir">
+            </div>
+            <div class="mb-3">
+                <label for="NbPersonneMenuInput" class="form-label">Nombre minimal de personnes</label>
+                <input type="number" class="form-control" id="NbPersonneMenuInput" placeholder="8">
+            </div>
+            <div class="mb-3">
+                <label for="PrixMenuInput" class="form-label">Prix par personne</label>
+                <input type="text" class="form-control" id="PrixMenuInput" placeholder="35€">
+            </div>
+            <div class="mb-3">
+                <label for="ImageInput" class="form-label">Image</label>
+                <input type="file" class="form-control" id="ImageInput">
+            </div>
+            <div class="text-center pt-3">
+                <button type="button" class="btn btn-secondary">Enregistrer</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal suppression menu-->
+<div class="modal fade" id="DeleteMenuModal" tabindex="-1" aria-labelledby="DeleteMenuModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="DeleteMenuModalLabel">Etes-vous sûr de vouloir supprimer ce menu ?</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="text-center pt-3">
+                <button type="button" class="btn btn-danger">Supprimer</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
