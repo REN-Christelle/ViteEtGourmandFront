@@ -1,7 +1,7 @@
 const tokenCookieName = "accesstoken";
 const btnDeconnexion = document.getElementById("btn-deconnexion");
 const roleCookieName = "role";
-
+const apiUrl = "http://127.0.0.1:8000/api/";
 btnDeconnexion.addEventListener("click", deconnexion);
 
 function getRole(){
