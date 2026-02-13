@@ -86,7 +86,7 @@ function showAndHideElementsForRoles(){
                     element.classList.add("d-none");
                 }
                 break;
-            case 'employé':
+            case 'employe':
                 if(!userConnected || role != "employe"){
                     element.classList.add("d-none");
                 }

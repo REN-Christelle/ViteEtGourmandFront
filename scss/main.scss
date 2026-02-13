@@ -141,3 +141,15 @@ footer.footer {
         justify-content: space-around;
     }
 }
+  /* Timeline simple */
+  .timeline{ list-style:none; padding-left:0; margin:0; }
+  .timeline li{
+    position:relative;
+    padding-left:28px;
+    padding-bottom:12px;
+  }
+  .timeline li .dot{
+    position:absolute; left:8px; top:7px;
+    width:10px; height:10px; border-radius:50%;
+    background:#8b1630;
+  }
