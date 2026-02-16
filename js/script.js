@@ -48,7 +48,7 @@ function eraseCookie(name) {
 }
 
 function isConnected(){
-    if(getToken() == null || getToken == undefined){
+    if(getToken() == null || getToken() == undefined){
         return false;
     }
     else{
@@ -82,20 +82,61 @@ function showAndHideElementsForRoles(){
                 }
                 break;
             case 'admin':
-                if(!userConnected || role != "admin"){
+                if(!userConnected || role != "ROLE_ADMIN"){
                     element.classList.add("d-none");
                 }
                 break;
             case 'employe':
-                if(!userConnected || role != "employe"){
+                if(!userConnected || role != "ROLE_EMPLOYEE"){
                     element.classList.add("d-none");
                 }
                 break;
             case 'client':
-                if(!userConnected || role != "client"){
+                if(!userConnected || role != "ROLE_USER"){
                     element.classList.add("d-none");
                 }
                 break;
         }
     })
+}
+
+//Bouton +/- ajout quantité
+function initOrderQuantity() {
+  const minPersEl = document.getElementById("minPers");
+  const qtyValueEl = document.getElementById("qtyValue");
+  const minusBtn = document.getElementById("minusBtn");
+  const plusBtn = document.getElementById("plusBtn");
+
+  // Si on n'est pas sur une page qui contient ce composant : ne rien faire
+  if (!minPersEl || !qtyValueEl || !minusBtn || !plusBtn) return;
+
+  const minPers = parseInt(minPersEl.textContent, 10);
+  let qty = parseInt(qtyValueEl.textContent, 10);
+
+  if (isNaN(qty) || qty < minPers) qty = minPers;
+
+  function render() {
+    qtyValueEl.textContent = qty;
+    minusBtn.disabled = qty <= minPers; // ✅ désactiver au minimum
+  }
+
+  // ✅ Pour éviter de doubler les listeners si tu reviens sur la page :
+  // on remplace les boutons par des clones "neufs"
+  const newMinus = minusBtn.cloneNode(true);
+  const newPlus = plusBtn.cloneNode(true);
+
+  minusBtn.parentNode.replaceChild(newMinus, minusBtn);
+  plusBtn.parentNode.replaceChild(newPlus, plusBtn);
+
+  newPlus.addEventListener("click", () => {
+    qty += 1;
+    render();
+  });
+
+  newMinus.addEventListener("click", () => {
+    if (qty > minPers) qty -= 1;
+    render();
+  });
+
+  render();
 }

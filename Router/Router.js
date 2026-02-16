@@ -65,6 +65,8 @@ const LoadContentPage = async () => {
 
   // Contenu ajouté : Afficher et masquer les éléments en fonction du rôle
   showAndHideElementsForRoles();
+  // Ajout : initialiser le composant +/-
+  initOrderQuantity();
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)

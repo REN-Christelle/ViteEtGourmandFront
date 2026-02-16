@@ -1,0 +1,89 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+    </div>
+</div>
+
+<div class="container text-center">
+      <h1>Mer & Fraîcheur</h1>
+      <p>POISSON</p>
+
+      <p class="brand-name text-center mb-1">
+        Elégant et léger aux saveurs iodées, parfait pour les repas estivaux
+      </p>
+      <p class="fst-italic text-center mt-1 mb-3">(Possibles allergènes : Poisson, sulfites(assaisonnements))</p>
+      
+      <!-- Entrée (image gauche / texte droite) -->
+      <section class="row row-cols-2 entree-section">
+        <div class="col">
+          <img src="../projet-images/Menus/Entrée Menu 5.jpg" class="menu-image" alt="Entrée">
+        </div>
+        
+        <div class="col">
+            <h3>Entrée</h3>
+            <p>Tartare de saumon</p> <br>
+            <p class="fst-italic">(Ingrédients : Saumon frais, citron vert, échalotes, huile d'olive)</p> <br>
+              <div>
+                <p>Accompagnement inclus :</p>
+                <ul>
+                  <li>Citron</li>
+                  <li>Salade fraîche (optionnel)</li>
+                </ul>
+              </div>
+        </div>
+      </section>
+
+    <!-- Plat (texte gauche / image droite) -->
+    <section class="row row-cols-2 plat-section">
+        <div class="col">
+            <h3>Plat</h3>
+            <p>Filet de cabillaud rôti</p> <br>
+            <p class="fst-italic">(Ingrédients : Cabillaud, courgettes, carottes, brocoli, huile d'olive, citron)</p> <br>
+              <div>
+                <p>Accompagnement inclus :</p>
+                <ul>
+                  <li>Pain blanc</li>
+                  <li>Citron</li>
+                </ul>
+              </div>
+        </div>
+
+        <div class="col">
+          <img src="../projet-images/Menus/Plat Menu 5.jpg" class="menu-image" alt="Entrée">
+        </div>
+      </section>
+
+    <!-- Dessert (image gauche / texte droite) -->
+    <section class="row row-cols-2 entree-section">
+        <div class="col">
+          <img src="../projet-images/Menus/Dessert Menu 5.jpg" class="menu-image" alt="Entrée">
+        </div>
+        
+        <div class="col">
+            <h3 class="pt-5">Dessert</h3>
+            <p>Salade de fruits frais</p> <br>
+            <p class="fst-italic">(Ingrédients : Fraise, raisin, ananas, kiwi)</p> <br>
+        </div>
+      </section>
+
+          <!-- Bouton d'ajout de personnes -->
+      <div class="order-bar">
+        <div class="order-meta">
+          <div>PERS. MIN : <span id="minPers">12</span></div>
+          <div>38€ / PERS</div>
+        </div>
+
+        <div class="order-qty">
+          <button type="button" class="btn qty-btn" id="minusBtn" aria-label="Diminuer">
+            <i class="bi bi-dash"></i>
+          </button>
+
+          <span class="qty-value" id="qtyValue">12</span>
+
+          <button type="button" class="btn qty-btn" id="plusBtn" aria-label="Augmenter">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+
+        <button type="button" class="btn btn-add" id="addBtn">AJOUTER</button>
+      </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+    </div>
+</div>
+
+<div class="container text-center">
+      <h1>Jardin & Gourmandise</h1>
+      <p>VEGETARIEN</p>
+
+      <p class="brand-name text-center mb-1">
+        Coloré et savoureux, idéal pour les repas responsables et modernes
+      </p>
+      <p class="fst-italic text-center mt-1 mb-3">(Possibles allergènes : Lactose, traces possibles de fruit à coque)</p>
+      
+      <!-- Entrée (image gauche / texte droite) -->
+      <section class="row row-cols-2 entree-section">
+        <div class="col">
+          <img src="../projet-images/Menus/Entrée Menu 3.jpg" class="menu-image" alt="Entrée">
+        </div>
+        
+        <div class="col">
+            <h3>Entrée</h3>
+            <p>Salade de quinoa, légumes rôtis</p> <br>
+            <p class="fst-italic">(Ingrédients : Quinoa, courgettes, poivrons, aubergines, huile d'olive, citron, herbes de provence)</p> <br>
+              <div>
+                <p>Accompagnement inclus :</p>
+                <ul>
+                  <li>Pain aux céréales</li>
+                  <li>Vinaigrette maison (optionnel)</li>
+                </ul>
+              </div>
+        </div>
+      </section>
+
+    <!-- Plat (texte gauche / image droite) -->
+    <section class="row row-cols-2 plat-section">
+        <div class="col">
+            <h3>Plat</h3>
+            <p>Rouleaux de courgettes, ricotta et sauce tomate</p> <br>
+            <p class="fst-italic">(Ingrédients : Feuilles de lasagnes, courgettes, épinards, carottes, sauce tomate, béchamel, fromage râpé)</p> <br>
+              <div>
+                <p>Accompagnement inclus :</p>
+                <ul>
+                  <li>Pain aux céréales</li>
+                </ul>
+              </div>
+        </div>
+
+        <div class="col">
+          <img src="../projet-images/Menus/Plat Menu 3.jpg" class="menu-image" alt="Entrée">
+        </div>
+      </section>
+
+    <!-- Dessert (image gauche / texte droite) -->
+    <section class="row row-cols-2 entree-section">
+        <div class="col">
+          <img src="../projet-images/Menus/Dessert Menu 3.jpg" class="menu-image" alt="Entrée">
+        </div>
+        
+        <div class="col">
+            <h3 class="pt-5">Dessert</h3>
+            <p>Panna cotta végétarienne</p> <br>
+            <p class="fst-italic">(Ingrédients : Crème entière, sucre, gélatine, coulis de fruits rouges)</p> <br>
+        </div>
+      </section>
+
+      <!-- Bouton d'ajout de personnes -->
+      <div class="order-bar">
+        <div class="order-meta">
+          <div>PERS. MIN : <span id="minPers">6</span></div>
+          <div>29€ / PERS</div>
+        </div>
+
+        <div class="order-qty">
+          <button type="button" class="btn qty-btn" id="minusBtn" aria-label="Diminuer">
+            <i class="bi bi-dash"></i>
+          </button>
+
+          <span class="qty-value" id="qtyValue">6</span>
+
+          <button type="button" class="btn qty-btn" id="plusBtn" aria-label="Augmenter">
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+
+        <button type="button" class="btn btn-add" id="addBtn">AJOUTER</button>
+      </div>
+</div>

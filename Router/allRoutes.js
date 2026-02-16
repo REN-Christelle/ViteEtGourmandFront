@@ -12,7 +12,11 @@ export const allRoutes = [
     new Route("/menu", "Découvrez nos menus", "/pages/menu.html",[]),
     new Route("/panier", "Mon panier", "/pages/commandes/panier.html", ["ROLE_USER"]),
     new Route("/allCommandes", "Vos commandes", "/pages/commandes/allCommandes.html", ["ROLE_USER"]),
-    new Route("/menuDetails1", "/pages/menuDetails/menuDetails1", ["ROLE_USER"]),
+    new Route("/menuDetails1", "", "/pages/menuDetails/menuDetails1.html", [], "/js/menuDetails/menuDetails1.js"),
+    new Route("/menuDetails2", "Menu Terroir & Tradition", "/pages/menuDetails/menuDetails2.html",[]),
+    new Route("/menuDetails3", "Menu Terroir & Tradition", "/pages/menuDetails/menuDetails3.html",[]),
+    new Route("/menuDetails4", "Menu Terroir & Tradition", "/pages/menuDetails/menuDetails4.html",[]),
+    new Route("/menuDetails5", "Menu Terroir & Tradition", "/pages/menuDetails/menuDetails5.html",[]),
 ];
 
 //Le titre s'affiche comme ceci : Route.titre - websitename
