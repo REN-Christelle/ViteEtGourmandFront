@@ -5,31 +5,313 @@
     </div>
 </div>
 
-<div class="container">
-    <form>
-        <div class="mb-3">
-            <label for="NomInput" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="NomInput" placeholder="Votre nom">
+<div class="container py-4">
+
+    <!-- BLOC 1 : MES INFORMATIONS -->
+
+    <h2 class="mb-4">Mes informations</h2>
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-12 col-md-6">
+                    <label for="NomInput" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="NomInput" placeholder="Votre nom">
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="PrenomInput" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" id="PrenomInput" placeholder="Votre prénom">
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="EmailInput" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="EmailInput" placeholder="Ex : client@mail.com">
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="TelephoneInput" class="form-label">Téléphone</label>
+                    <input type="tel" class="form-control" placeholder="Ex : 06 00 00 00 00">
+                </div>
+
+                <div class="col-12">
+                    <label for="AllergyInput" class="form-label">Allergies / Intolérances</label>
+                    <input type="text" class="form-control" id="AllergyInput" placeholder="Ex : arachides, gluten...">
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="NbInviteInput" class="form-label">Nombre d'invités par défaut</label>
+                    <input type="number" min="1" class="form-control" id="NbInviteInput" placeholder="25">
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="VilleInput" class="form-label">Ville</label>
+                    <input type="text" class="form-control" id="VilleInput" placeholder="Ex : Bordeaux">
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#EditionProfilModal">Modifier mes informations</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#DeleteProfilModal">Supprimer mon compte</button>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="/editPassword">Changer mon mot de passe</a>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="PrenomInput" class="form-label">Prénom</label>
-            <input type="text" class="form-control" id="PrenomInput" placeholder="Votre prénom">
-        </div>
-        <div class="mb-3">
-            <label for="AllergyInput" class="form-label">Allergies</label>
-            <input type="text" class="form-control" id="AllergyInput" placeholder="Vos allergies">
-        </div>
-        <div class="mb-3">
-            <label for="NbInviteInput" class="form-label">Nombre d'invités</label>
-            <input type="number" class="form-control" id="NbInviteInput" placeholder="Combien êtes-vous ?">
-        </div>
-        <div class="text-center pt-3">
-            <button type="submit" class="btn btn-secondary">Modifier vos informations</button>
-            <button type="button" class="btn btn-danger">Supprimer mon compte</button>
-        </div>
-        <div class="text-center pt-3">
-        <a href="/editPassword">Changer mon mot de passe</a>
     </div>
-    </form>
+
+    <!-- BLOC 2 : MES COMMANDES -->
+    <h2 class="mb-3">Mes commandes</h2>
+    <div class="card mb-3">
+        <div class="card-body">
+            <!-- COMMANDE : EN ATTENTE (modifiable/annulable) -->
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>Commande #1024</strong><br>
+                    Menu Terroir & Tradition (non modifiable)
+                </div>
+                <span class="badge bg-secondary">En attente</span>
+            </div>
+            
+            <hr>
+
+            <p class="mb-1"><strong>Personnes :</strong> 25</p>
+            <p class="mb-1"><strong>Allergies :</strong> Aucune</p>
+            <p class="mb-1"><strong>Date évènement :</strong> 20/03/2026</p>
+
+            <div class="mt-3">
+                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#EditionCommandeModal">Modifier (sauf menu)</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#DeleteCommandeModal">Annuler</button>
+            </div>
+
+            <p class="text-muted small mt-2 mb-0">
+                Vous pouvez modifier/annuler tant que la commande n’est pas acceptée.
+            </p>
+        </div>
+        
+        <!-- COMMANDE : ACCEPTÉE (suivi) -->
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                    <strong>Commande #1025</strong><br>
+                    Menu Végétarien (non modifiable)
+                    </div>
+                    <span class="badge bg-success">Acceptée</span>
+                </div>
+
+                <hr>
+
+                <p class="mb-2"><strong>Suivi de commande :</strong></p>
+                <ul class="mb-0">
+                    <li>Créée — 12/02/2026 18:20</li>
+                    <li>Acceptée — 12/02/2026 18:35</li>
+                    <li>En préparation — 12/02/2026 18:50</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- COMMANDE : TERMINÉE (avis) -->
+        <div class="card mb-3">
+            <div class="card-body">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                    <strong>Commande #1020</strong><br>
+                    Menu Terroir & Tradition (non modifiable)
+                    </div>
+                    <span class="badge bg-dark">Terminée</span>
+                </div>
+
+                <hr>
+
+                <p class="text-muted small">
+                    Vous avez reçu un mail : vous pouvez laisser un avis.
+                </p>
+
+                <div class="mb-3">
+                    <label class="form-label">Note (1 à 5)</label>
+                    <select class="form-select">
+                    <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Commentaire</label>
+                    <textarea class="form-control" rows="3" placeholder="Votre commentaire..."></textarea>
+                </div>
+
+                <div class="text-end">
+                    <button class="btn btn-primary">Envoyer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL BLOC 1 : MES INFORMATIONS-->
+<!-- Modal modification informations -->
+<div class="modal fade" id="EditionProfilModal" tabindex="-1" aria-labelledby="EditionProfilModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="EditionProfilModalLabel">Modifier mes informations</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="NomInput" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="NomInput" placeholder="Dupont">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="PrenomInput" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="PrenomInput" placeholder="Jean">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="EmailInputProfil" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="EmailInputProfil" placeholder="jean.dupont@mail.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="TelephoneInput" class="form-label">Téléphone</label>
+                        <input type="tel" class="form-control" id="TelephoneInput" placeholder="06 00 00 00 00">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="VilleInput" class="form-label">Ville</label>
+                        <input type="text" class="form-control" id="VilleInput" placeholder="Bordeaux">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="NbInvitesInput" class="form-label">Nombre d’invités par défaut</label>
+                        <input type="number" class="form-control" id="NbInvitesInput" placeholder="25">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="AllergiesProfilInput" class="form-label">Allergies / intolérances</label>
+                        <input type="text" class="form-control" id="AllergiesProfilInput" placeholder="ex : gluten, arachides">
+                    </div>
+
+                    <div class="text-center pt-3">
+                        <button type="button" class="btn btn-secondary">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
+<!-- Modal suppression compte -->
+<div class="modal fade" id="DeleteProfilModal" tabindex="-1" aria-labelledby="DeleteProfilModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="DeleteProfilModalLabel">Etes-vous sûr de vouloir supprimer votre compte ?</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <p class="text-muted">
+                        Cette action est définitive. Toutes vos commandes et informations seront supprimées.
+                    </p>
+
+                    <div class="text-center pt-3">
+                        <button type="button" class="btn btn-danger">Supprimer mon compte</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- MODAL BLOC 2 : MES COMMANDES -->
+<!-- Modal édition commande -->
+<div class="modal fade" id="EditionCommandeModal" tabindex="-1" aria-labelledby="EditionCommandeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title fs-5" id="EditionCommandeModalLabel">Modifier la commande</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <!-- Menu (non modifiable) -->
+                    <div class="mb-3">
+                        <label class="form-label">Menu choisi (non modifiable)</label>
+                        <input type="text" class="form-control" value="Terroir & Tradition" disabled>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="NbPersonnesInput" class="form-label">Nombre de personnes</label>
+                        <input type="number" class="form-control" id="NbPersonnesInput" placeholder="25" min="1">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="AllergiesInput" class="form-label">Allergies / intolérances</label>
+                        <input type="text" class="form-control" id="AllergiesInput" placeholder="ex : arachides, gluten...">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="DateEventInput" class="form-label">Date de l'évènement</label>
+                        <input type="date" class="form-control" id="DateEventInput">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="HeureEventInput" class="form-label">Heure de l'évènement</label>
+                        <input type="time" class="form-control" id="HeureEventInput">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="AdresseEventInput" class="form-label">Adresse / lieu</label>
+                        <input type="text" class="form-control" id="AdresseEventInput" placeholder="Adresse de livraison / évènement">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="RemarquesInput" class="form-label">Remarques</label>
+                        <textarea class="form-control" id="RemarquesInput" rows="3" placeholder="ex : livraison avant 19h, pas de porc..."></textarea>
+                    </div>
+
+                    <div class="text-center pt-3">
+                        <button type="button" class="btn btn-secondary">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal annulation commande -->
+<div class="modal fade" id="DeleteCommandeModal" tabindex="-1" aria-labelledby="DeleteCommandeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="DeleteCommandeModalLabel">Etes-vous sûr de vouloir annuler cette commande ?</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          <p class="text-muted">
+            L'annulation est possible tant que la commande n'est pas acceptée.
+          </p>
+
+          <div class="text-center pt-3">
+            <button type="button" class="btn btn-danger">Annuler la commande</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>

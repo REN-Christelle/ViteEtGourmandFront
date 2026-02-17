@@ -2,10 +2,15 @@ const mailInput = document.getElementById("EmailInput");
 const passwordInput = document.getElementById("PasswordInput");
 const btnConnexion = document.getElementById("btn-connexion");
 const connexionForm = document.getElementById("connexionForm");
+const overlay = document.getElementById("loadingOverlay");
 
 btnConnexion.addEventListener("click", checkCredentials);
 
 function checkCredentials(){
+    // ✅ afficher overlay
+    overlay.classList.remove("d-none");
+    btnConnexion.disabled = true;
+    
     let dataForm = new FormData(connexionForm);
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -35,7 +40,6 @@ function checkCredentials(){
     .then(result => {
         const token = result.apiToken; //Récupère le token
         setToken(token); //Placer ce token en cookie
-
         setCookie(roleCookieName, result.roles[0], 7);
         window.location.replace("/");
     })

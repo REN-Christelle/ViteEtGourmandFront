@@ -10,7 +10,7 @@ export const allRoutes = [
     new Route("/editPassword", "Modifier mon mot de passe", "/pages/auth/editPassword.html", []),
     new Route("/contact", "Contactez-nous", "/pages/contact.html", []),
     new Route("/menu", "Découvrez nos menus", "/pages/menu.html",[]),
-    new Route("/panier", "Mon panier", "/pages/commandes/panier.html", []),
+    new Route("/panier", "Mon panier", "/pages/panier.html", []),
     new Route("/allCommandes", "Vos commandes", "/pages/commandes/allCommandes.html", []),
     new Route("/menuDetails1", "", "/pages/menuDetails/menuDetails1.html", [], "/js/menuDetails/menuDetails1.js"),
     new Route("/menuDetails2", "Menu Terroir & Tradition", "/pages/menuDetails/menuDetails2.html",[]),
