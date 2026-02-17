@@ -9,94 +9,95 @@
     <div class="text-center-left">
         <h3>Nouveau client</h3>
     
-    <div class="text-center">
-        <span class="icon"><i class="bi bi-camera-fill"></i></span>
-    </div>
-    <div class="text-center mb-3">
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="optionsGenre" id="madameRadio" value="option1">
-            <label class="form-check-label" for="madameRadio">Madame</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="optionsGenre" id="monsieurRadio" value="option2">
-            <label class="form-check-label" for="monsieurRadio">Monsieur</label>
-        </div>
-    </div>
-    <form class="row g-2" id="formulaireInscription">
-        <div class="mb-3 col-md-6">
-            <label for="NomInput" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="NomInput" placeholder="Veuillez saisir votre nom" name="nom">
-            <div class="invalid-feedback">
-                Nom requis
+            <div class="text-center">
+                <span class="icon"><i class="bi bi-camera-fill"></i></span>
             </div>
-        </div>
-        <div class="mb-3 col-md-6">
-            <label for="PrenomInput" class="form-label">Prénom</label>
-            <input type="text" class="form-control" id="PrenomInput" placeholder="Veuillez saisir votre prénom" name="prenom">
-            <div class="invalid-feedback">
-                Prénom requis
+            <div class="text-center mb-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="optionsGenre" id="madameRadio" value="option1">
+                    <label class="form-check-label" for="madameRadio">Madame</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="optionsGenre" id="monsieurRadio" value="option2">
+                    <label class="form-check-label" for="monsieurRadio">Monsieur</label>
+                </div>
             </div>
-        </div>
-        <div class="mb-3">
-            <label for="TelephoneInput" class="form-label">Téléphone</label>
-            <input type="tel" class="form-control" id="TelephoneInput"
-            placeholder="Veuillez indiquer votre numéro de téléphone" name="telephone"
-            maxlength="10" inputmode="numeric">
-            <div class="invalid-feedback">
-                Numéro de téléphone requis
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="AdresseInput" class="form-label">Adresse</label>
-            <input type="text" class="form-control" id="AdresseInput" placeholder="Veuillez indiquer votre adresse" name="adresse">
-            <div class="invalid-feedback">
-                Adresse est requise
-            </div>
-        </div>
-        <div class="mb-3 col-md-6">
-            <label for="VilleInput" class="form-label">Ville</label>
-            <input type="text" class="form-control" id="VilleInput" placeholder="Veuillez indiquer la ville" name="ville">
-            <div class="invalid-feedback">
-                Ville requise
-            </div>
-        </div>
-        <div class="mb-3 col-md-6">
-            <label for="PaysInput" class="form-label">Pays</label>
-            <input type="text" class="form-control" id="PaysInput" placeholder="Veuillez indiquer le pays" name="pays">
-            <div class="invalid-feedback">
-                Ville requise
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="EmailInput" class="form-label">E-mail</label>
-            <input type="email" class="form-control" id="EmailInput" placeholder="Veuillez saisir votre adresse mail" name="email">
-            <div class="invalid-feedback">
-                Le mail n'est pas au bon format
-            </div>
-        </div>
-        <div class="mb-3 col-md-6">
-            <label for="PasswordInput" class="form-label">Mot de passe</label>
-            <input type="password" class="form-control" id="PasswordInput" placeholder="Veuillez saisir votre mot de passe" name="mdp">
-            <div class="invalid-feedback">
-                Le mot de passe n'est pas assez robuste : 10 caractères minimum, 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial obligatoire
-            </div>
-            <div class="valid-feedback">
-                Le mot de passe est robuste
-            </div>
-        </div>
-        <div class="mb-3 col-md-6">
-            <label for="ConfirmPasswordInput" class="form-label">Confirmez votre mot de passe</label>
-            <input type="password" class="form-control" id="ConfirmPasswordInput" placeholder="Veuillez confirmer votre mot de passe">
-            <div class="invalid-feedback">
-                Les mots de passe ne sont pas identiques
-            </div>
-        </div>
+            <form class="row g-2" id="formulaireInscription">
+                <div class="mb-3 col-md-6">
+                    <label for="NomInput" class="form-label">Nom</label>
+                    <input type="text" class="form-control" id="NomInput" placeholder="Veuillez saisir votre nom" name="nom">
+                    <div class="invalid-feedback">
+                        Nom requis
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="PrenomInput" class="form-label">Prénom</label>
+                    <input type="text" class="form-control" id="PrenomInput" placeholder="Veuillez saisir votre prénom" name="prenom">
+                    <div class="invalid-feedback">
+                        Prénom requis
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="TelephoneInput" class="form-label">Téléphone</label>
+                    <input type="tel" class="form-control" id="TelephoneInput"
+                    placeholder="Veuillez indiquer votre numéro de téléphone (ex: 0612345678)" name="telephone"
+                    maxlength="10" inputmode="numeric">
+                    <div class="invalid-feedback">
+                        Numéro de téléphone requis
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="AdresseInput" class="form-label">Adresse</label>
+                    <input type="text" class="form-control" id="AdresseInput" placeholder="Veuillez indiquer votre adresse" name="adresse">
+                    <div class="invalid-feedback">
+                        Adresse est requise
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="VilleInput" class="form-label">Ville</label>
+                    <input type="text" class="form-control" id="VilleInput" placeholder="Veuillez indiquer la ville" name="ville">
+                    <div class="invalid-feedback">
+                        Ville requise
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="PaysInput" class="form-label">Pays</label>
+                    <input type="text" class="form-control" id="PaysInput" placeholder="Veuillez indiquer le pays" name="pays">
+                    <div class="invalid-feedback">
+                        Ville requise
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="EmailInput" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="EmailInput" placeholder="Veuillez saisir votre adresse mail (ex: client@mail.com)" name="email">
+                    <div class="invalid-feedback">
+                        Le mail n'est pas au bon format
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="PasswordInput" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="PasswordInput" placeholder="Veuillez saisir votre mot de passe" name="mdp">
+                    <div class="invalid-feedback">
+                        Le mot de passe n'est pas assez robuste : 10 caractères minimum, 1 majuscule, 1 minuscule, 1 chiffre et 1 caractère spécial obligatoire
+                    </div>
+                    <div class="valid-feedback">
+                        Le mot de passe est robuste
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label for="ConfirmPasswordInput" class="form-label">Confirmez votre mot de passe</label>
+                    <input type="password" class="form-control" id="ConfirmPasswordInput" placeholder="Veuillez confirmer votre mot de passe">
+                    <div class="invalid-feedback">
+                        Les mots de passe ne sont pas identiques
+                    </div>
+                </div>
+                <div class="text-center pt-3">
+                    <button type="button" class="btn btn-secondary" id="btn-inscription">S'inscrire</button>
+                </div>
+            </form>
         <div class="text-center pt-3">
-            <button type="button" class="btn btn-secondary" id="btn-inscription">S'inscrire</button>
+            <a href="/connexion">Déjà client ? Connectez-vous !</a>
         </div>
-    </form>
-    <div class="text-center pt-3">
-        <a href="/connexion">Déjà client ? Connectez-vous !</a>
     </div>
 </div>
 

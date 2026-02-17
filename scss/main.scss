@@ -222,3 +222,14 @@ footer.footer {
   width: 90%;
   max-width: 320px;
 }
+
+.star {
+  cursor: pointer;
+  color: #ccc; // gris par défaut
+  transition: color 0.2s;
+}
+
+.star.hovered,
+.star.selected {
+  color: #ffc107; // jaune Bootstrap
+}

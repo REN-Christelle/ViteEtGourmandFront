@@ -67,6 +67,8 @@ const LoadContentPage = async () => {
   showAndHideElementsForRoles();
   // Ajout : initialiser le composant +/-
   initOrderQuantity();
+  // Ajout : remplissage d'étoiles pour les avis
+  initStarRating();
 };
 
 // Fonction pour gérer les événements de routage (clic sur les liens)

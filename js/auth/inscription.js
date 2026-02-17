@@ -47,19 +47,6 @@ function validateForm(){
     }
 }
 
-function validateConfirmationPassword(inputPwD, inputConfirmPwd){
-    if(inputPwD.value == inputConfirmPwd.value){
-        inputConfirmPwd.classList.add("is-valid");
-        inputConfirmPwd.classList.remove("is-invalid");
-        return true;
-    }
-    else{
-        inputConfirmPwd.classList.add("is-invalid");
-        inputConfirmPwd.classList.remove("is-valid");
-        return false;
-    }
-}
-
 function validatePassword(input){
     //Définir mon regex
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
@@ -75,6 +62,28 @@ function validatePassword(input){
         return false;
     }
 }
+
+function validateConfirmationPassword(inputPwD, inputConfirmPwd){
+
+    // Si la confirmation est vide : pas de couleur
+    if (inputConfirmPwd.value === "") {
+        inputConfirmPwd.classList.remove("is-valid");
+        inputConfirmPwd.classList.remove("is-invalid");
+        return false;
+    }
+
+    // Si la confirmation n'est pas vide, on compare
+    if (inputPwD.value === inputConfirmPwd.value) {
+        inputConfirmPwd.classList.add("is-valid");
+        inputConfirmPwd.classList.remove("is-invalid");
+        return true;
+    } else {
+        inputConfirmPwd.classList.add("is-invalid");
+        inputConfirmPwd.classList.remove("is-valid");
+        return false;
+    }
+}
+
 
 function validateMail(input){
     //Définir mon regex

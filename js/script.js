@@ -140,3 +140,51 @@ function initOrderQuantity() {
 
   render();
 }
+
+// Remplissage étoile pour avis
+function initStarRating() {
+    const stars = document.querySelectorAll(".star");
+    const noteInput = document.getElementById("noteValue");
+
+    if (!stars.length) return;
+
+    stars.forEach(star => {
+
+        // SURVOL
+        star.addEventListener("mouseover", function () {
+            const value = this.getAttribute("data-value");
+
+            stars.forEach(s => {
+                if (s.getAttribute("data-value") <= value) {
+                    s.classList.add("hovered");
+                } else {
+                    s.classList.remove("hovered");
+                }
+            });
+        });
+
+        // QUAND ON QUITTE LA ZONE
+        star.addEventListener("mouseout", function () {
+            stars.forEach(s => s.classList.remove("hovered"));
+        });
+
+        // CLIC
+        star.addEventListener("click", function () {
+            const value = this.getAttribute("data-value");
+            noteInput.value = value;
+
+            stars.forEach(s => {
+                if (s.getAttribute("data-value") <= value) {
+                    s.classList.add("selected");
+                    s.classList.remove("bi-star");
+                    s.classList.add("bi-star-fill");
+                } else {
+                    s.classList.remove("selected");
+                    s.classList.remove("bi-star-fill");
+                    s.classList.add("bi-star");
+                }
+            });
+        });
+
+    });
+}
