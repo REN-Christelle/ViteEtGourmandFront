@@ -1,0 +1,198 @@
+<!-- HERO -->
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Compte Employé</h1>
+    </div>
+</div>
+
+<div class="container py-4">
+
+    <!-- BLOC 1 : GESTION DES MENUS -->
+    <h2 class="mb-3">Gestion des menus</h2>
+    <div class="card mb-4">
+        <div class="card-body">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>Menu Terroir & Tradition</strong><br>
+                    35€ / pers – Min 10 personnes
+                </div>
+
+                <div>
+                    <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#EditMenuModal">Modifier</button>
+                    <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeleteMenuModal">Supprimer</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BLOC 2 : GESTION DES COMMANDES -->
+    <h2 class="mb-3">Commandes clients</h2>
+
+    <!-- FILTRE -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <select class="form-select">
+                        <option>Tous les statuts</option>
+                        <option>Acceptée</option>
+                        <option>En préparation</option>
+                        <option>En cours de livraison</option>
+                        <option>Livrée</option>
+                        <option>Terminée</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Rechercher par client">
+                </div>
+
+                <div class="col-md-4 text-end">
+                    <button class="btn btn-secondary">Filtrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exemple commande -->
+    <div class="card mb-4">
+        <div class="card-body">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+            <strong>Commande #2030</strong><br>
+            <small class="text-muted">Client : Jean Dupont</small>
+            </div>
+            <span class="badge bg-warning text-dark">En préparation</span>
+        </div>
+
+        <hr>
+
+        <div class="mb-3">
+            <label class="form-label">Mettre à jour le statut</label>
+            <select class="form-select">
+            <option>Acceptée</option>
+            <option selected>En préparation</option>
+            <option>En cours de livraison</option>
+            <option>Livrée</option>
+            <option>En attente du retour de matériel</option>
+            <option>Terminée</option>
+            </select>
+        </div>
+
+        <p class="text-muted small mb-2">
+            Pour annuler/modifier une commande : vous devez contacter le client (Téléphone ou email) et renseigner un motif.
+        </p>
+
+        <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#CancelOrderModal">
+            Annuler / Modifier (avec motif)
+        </button>
+
+        <div class="text-end mt-3">
+            <button class="btn btn-primary">Enregistrer</button>
+        </div>
+
+        </div>
+    </div>
+
+    <!-- BLOC 3 : VALIDATION DES AVIS -->
+    <h2 class="mb-3">Avis en attente</h2>
+
+    <div class="card mb-3">
+        <div class="card-body">
+
+            <strong>Jean D.</strong> ★★★★☆
+            <p class="mt-2">Service impeccable et rapide.</p>
+
+            <div class="text-end">
+                <button class="btn btn-success btn-sm">Valider</button>
+                <button class="btn btn-danger btn-sm">Refuser</button>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal annulation commande avec motif -->
+<div class="modal fade" id="CancelOrderModal" tabindex="-1" aria-labelledby="CancelOrderModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="CancelOrderModalLabel">Annuler / Modifier une commande</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Mode de contact</label>
+            <select class="form-select">
+              <option selected>Téléphone</option>
+              <option>Email</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Motif</label>
+            <textarea class="form-control" rows="3" placeholder="Ex : client indisponible, changement de date..."></textarea>
+          </div>
+
+          <div class="text-center pt-3">
+            <button type="button" class="btn btn-danger">Confirmer</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal édition menu (exemple) -->
+<div class="modal fade" id="EditMenuModal" tabindex="-1" aria-labelledby="EditMenuModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="EditMenuModalLabel">Modifier le menu</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Nom</label>
+            <input class="form-control" placeholder="Terroir & Tradition">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Prix / pers</label>
+            <input class="form-control" placeholder="35">
+          </div>
+          <div class="text-center pt-3">
+            <button type="button" class="btn btn-secondary">Enregistrer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal suppression menu (exemple) -->
+<div class="modal fade" id="DeleteMenuModal" tabindex="-1" aria-labelledby="DeleteMenuModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="DeleteMenuModalLabel">Supprimer ce menu ?</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center pt-3">
+          <button type="button" class="btn btn-danger">Supprimer</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -12193,4 +12193,15 @@ footer.footer {
   text-align: center;
   width: 90%;
   max-width: 320px;
+}
+
+.star {
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.star.hovered,
+.star.selected {
+  color: #ffc107;
 }/*# sourceMappingURL=main.css.map */

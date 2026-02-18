@@ -1,0 +1,332 @@
+<!-- HERO -->
+<div class="hero-scene text-center text-white">
+  <div class="hero-scene-content">
+    <h1>Compte Administrateur</h1>
+  </div>
+</div>
+
+<div class="container py-4">
+
+  <!-- BLOC 1 : EMPLOYÉS (ADMIN) -->
+  <h2 class="mb-3">Gestion des employés</h2>
+  <div class="card mb-4">
+    <div class="card-body">
+
+      <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
+        <p class="mb-0 text-muted">
+          Créer un compte employé (email = username). Pas de création d’admin depuis l’application.
+        </p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#CreateEmployeeModal">
+          Créer un employé
+        </button>
+      </div>
+
+      <!-- Exemple liste employé -->
+      <div class="d-flex justify-content-between align-items-center border-top pt-3">
+        <div>
+          <strong>employe1@mail.com</strong><br>
+          <small class="text-muted">Actif</small>
+        </div>
+        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DisableEmployeeModal">
+          Désactiver
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOC 2 : STATISTIQUES (ADMIN) -->
+  <h2 class="mb-3">Statistiques</h2>
+  <div class="card mb-4">
+    <div class="card-body">
+
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <label class="form-label">Menu</label>
+          <select class="form-select" id="statsMenu">
+            <option value="all" selected>Tous les menus</option>
+            <option value="terroir">Terroir & Tradition</option>
+            <option value="vege">Végétarien</option>
+            <option value="sansgluten">Sans gluten</option>
+          </select>
+        </div>
+
+        <div class="col-6 col-md-4">
+          <label class="form-label">Du</label>
+          <input type="date" class="form-control" id="statsFrom">
+        </div>
+
+        <div class="col-6 col-md-4">
+          <label class="form-label">Au</label>
+          <input type="date" class="form-control" id="statsTo">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end mt-3">
+        <button class="btn btn-secondary" id="btnUpdateChart">Mettre à jour</button>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <p class="mb-1"><strong>Nombre de commandes :</strong> <span id="statsOrders">0</span></p>
+          <p class="mb-0"><strong>Chiffre d’affaires :</strong> <span id="statsRevenue">0</span> €</p>
+          <small class="text-muted">Données exemple (à remplacer par ton API).</small>
+        </div>
+        <div class="col-12 col-md-6">
+          <canvas id="ordersChart" height="160"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOC 3 : GESTION DES MENUS (COMME EMPLOYÉ) -->
+  <h2 class="mb-3">Gestion des menus</h2>
+  <div class="card mb-4">
+    <div class="card-body">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Menu Terroir & Tradition</strong><br>
+          <small class="text-muted">35€ / pers — Min 10</small>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#EditMenuModal">Modifier</button>
+          <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeleteMenuModal">Supprimer</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOC 4 : COMMANDES (COMME EMPLOYÉ) -->
+  <h2 class="mb-3">Commandes clients</h2>
+
+  <!-- Filtre -->
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <select class="form-select">
+            <option>Tous les statuts</option>
+            <option>Acceptée</option>
+            <option>En préparation</option>
+            <option>En cours de livraison</option>
+            <option>Livrée</option>
+            <option>En attente du retour de matériel</option>
+            <option>Terminée</option>
+          </select>
+        </div>
+
+        <div class="col-12 col-md-5">
+          <input type="text" class="form-control" placeholder="Rechercher par client">
+        </div>
+
+        <div class="col-12 col-md-3 text-md-end">
+          <button class="btn btn-secondary">Filtrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exemple commande -->
+  <div class="card mb-4">
+    <div class="card-body">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Commande #2030</strong><br>
+          <small class="text-muted">Client : Jean Dupont</small>
+        </div>
+        <span class="badge bg-warning text-dark">En préparation</span>
+      </div>
+
+      <hr>
+
+      <div class="mb-3">
+        <label class="form-label">Mettre à jour le statut</label>
+        <select class="form-select">
+          <option>Acceptée</option>
+          <option selected>En préparation</option>
+          <option>En cours de livraison</option>
+          <option>Livrée</option>
+          <option>En attente du retour de matériel</option>
+          <option>Terminée</option>
+        </select>
+      </div>
+
+      <p class="text-muted small mb-2">
+        Pour annuler/modifier une commande : vous devez contacter le client (Téléphone ou email) et renseigner un motif.
+      </p>
+
+      <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#CancelOrderModal">
+        Annuler / Modifier (avec motif)
+      </button>
+
+      <div class="text-end mt-3">
+        <button class="btn btn-primary">Enregistrer</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOC 5 : AVIS (COMME EMPLOYÉ) -->
+  <h2 class="mb-3">Avis en attente</h2>
+  <div class="card mb-4">
+    <div class="card-body">
+      <strong>Anne M.</strong> ★★★★★
+      <p class="mt-2 mb-3">Professionnalisme au top et réactif. Je recommande !</p>
+
+      <div class="text-end">
+        <button class="btn btn-success btn-sm">Valider</button>
+        <button class="btn btn-danger btn-sm">Refuser</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===================== MODALS ===================== -->
+
+<!-- Modal création employé -->
+<div class="modal fade" id="CreateEmployeeModal" tabindex="-1" aria-labelledby="CreateEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="CreateEmployeeModalLabel">Créer un compte employé</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Email (username)</label>
+            <input type="email" class="form-control" placeholder="employe@mail.com">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" placeholder="Mot de passe">
+          </div>
+
+          <p class="text-muted small mb-0">
+            L’employé recevra un mail indiquant qu’un compte a été créé, sans le mot de passe.
+          </p>
+
+          <div class="text-center pt-3">
+            <button type="button" class="btn btn-secondary">Créer</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal désactiver employé -->
+<div class="modal fade" id="DisableEmployeeModal" tabindex="-1" aria-labelledby="DisableEmployeeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="DisableEmployeeModalLabel">Désactiver ce compte employé ?</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <p class="text-muted">Le compte sera rendu inutilisable.</p>
+        <div class="text-center pt-3">
+          <button type="button" class="btn btn-danger">Désactiver</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal annulation commande avec motif -->
+<div class="modal fade" id="CancelOrderModal" tabindex="-1" aria-labelledby="CancelOrderModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="CancelOrderModalLabel">Annuler / Modifier une commande</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Mode de contact</label>
+            <select class="form-select">
+              <option selected>Téléphone</option>
+              <option>Email</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Motif</label>
+            <textarea class="form-control" rows="3" placeholder="Ex : client indisponible, changement de date..."></textarea>
+          </div>
+
+          <div class="text-center pt-3">
+            <button type="button" class="btn btn-danger">Confirmer</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Retour</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal édition menu (exemple) -->
+<div class="modal fade" id="EditMenuModal" tabindex="-1" aria-labelledby="EditMenuModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="EditMenuModalLabel">Modifier le menu</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Nom</label>
+            <input class="form-control" placeholder="Terroir & Tradition">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Prix / pers</label>
+            <input class="form-control" placeholder="35">
+          </div>
+          <div class="text-center pt-3">
+            <button type="button" class="btn btn-secondary">Enregistrer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal suppression menu (exemple) -->
+<div class="modal fade" id="DeleteMenuModal" tabindex="-1" aria-labelledby="DeleteMenuModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="DeleteMenuModalLabel">Supprimer ce menu ?</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center pt-3">
+          <button type="button" class="btn btn-danger">Supprimer</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

@@ -63,42 +63,53 @@ connected
     - employé
     - client
 */
-function showAndHideElementsForRoles(){
-    const userConnected = isConnected();
-    const role = getRole();
+function showAndHideElementsForRoles() {
+  const userConnected = isConnected();
+  const role = getRole(); // "ROLE_ADMIN" / "ROLE_EMPLOYEE" / "ROLE_USER"
 
-    let allElementsToEdit = document.querySelectorAll('[data-show]');
+  const allElementsToEdit = document.querySelectorAll("[data-show]");
 
-    allElementsToEdit.forEach(element =>{
-        switch(element.dataset.show){
-            case 'disconnected':
-                if(userConnected){
-                    element.classList.add("d-none");
-                }
-                break;
-            case 'connected':
-                if(!userConnected){
-                    element.classList.add("d-none");
-                }
-                break;
-            case 'admin':
-                if(!userConnected || role != "ROLE_ADMIN"){
-                    element.classList.add("d-none");
-                }
-                break;
-            case 'employe':
-                if(!userConnected || role != "ROLE_EMPLOYEE"){
-                    element.classList.add("d-none");
-                }
-                break;
-            case 'client':
-                if(!userConnected || role != "ROLE_USER"){
-                    element.classList.add("d-none");
-                }
-                break;
-        }
-    })
+  allElementsToEdit.forEach((element) => {
+    // ex: "ROLE_ADMIN ROLE_EMPLOYEE" ou "ROLE_ADMIN,ROLE_EMPLOYEE"
+    const rule = element.dataset.show.trim();
+
+    // On accepte espace OU virgule comme séparateur
+    const rules = rule.split(/[\s,]+/);
+
+    // Par défaut on cache, puis on ré-affiche si autorisé
+    element.classList.add("d-none");
+
+    // Cas : utilisateur non connecté
+    if (!userConnected) {
+      switch (true) {
+        case rules.includes("disconnected"):
+          element.classList.remove("d-none");
+          break;
+      }
+      return;
+    }
+
+    // Cas : utilisateur connecté
+    switch (true) {
+      case rules.includes("connected"):
+        element.classList.remove("d-none");
+        break;
+
+      case rules.includes("ROLE_ADMIN") && role === "ROLE_ADMIN":
+        element.classList.remove("d-none");
+        break;
+
+      case rules.includes("ROLE_EMPLOYEE") && role === "ROLE_EMPLOYEE":
+        element.classList.remove("d-none");
+        break;
+
+      case rules.includes("ROLE_USER") && role === "ROLE_USER":
+        element.classList.remove("d-none");
+        break;
+    }
+  });
 }
+
 
 //Bouton +/- ajout quantité
 function initOrderQuantity() {
@@ -117,10 +128,10 @@ function initOrderQuantity() {
 
   function render() {
     qtyValueEl.textContent = qty;
-    minusBtn.disabled = qty <= minPers; // ✅ désactiver au minimum
+    minusBtn.disabled = qty <= minPers; // désactiver au minimum
   }
 
-  // ✅ Pour éviter de doubler les listeners si tu reviens sur la page :
+  // Pour éviter de doubler les listeners si tu reviens sur la page :
   // on remplace les boutons par des clones "neufs"
   const newMinus = minusBtn.cloneNode(true);
   const newPlus = plusBtn.cloneNode(true);

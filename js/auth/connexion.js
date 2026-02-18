@@ -7,7 +7,7 @@ const overlay = document.getElementById("loadingOverlay");
 btnConnexion.addEventListener("click", checkCredentials);
 
 function checkCredentials(){
-    // ✅ afficher overlay
+    // afficher overlay de connexion
     overlay.classList.remove("d-none");
     btnConnexion.disabled = true;
     
@@ -42,6 +42,7 @@ function checkCredentials(){
         setToken(token); //Placer ce token en cookie
         setCookie(roleCookieName, result.roles[0], 7);
         window.location.replace("/");
+        console.log(result);
     })
     .catch(error => console.log('error', error));
 }
