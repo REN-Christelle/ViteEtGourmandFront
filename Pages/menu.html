@@ -27,7 +27,8 @@
 <!--Ajout du titre du menu 1-->
 <div class="p-3">
         <h2>Terroir & Tradition</h2>
-        <p>VIANDE ROUGE</p>
+        <h5>Thème : Noël, Familial</h5>
+        <small>VIANDE ROUGE</small>
         <hr>
 </div>
 
@@ -37,7 +38,8 @@
         <div class="col-lg-4">
             <img src="../projet-images/Menus/Plat Menu 1.jpg" alt="Boeuf bourguignon" class="menu-image"/>
         </div>
-        <!--Ajout du contenu du menu 1 et les boutons d'ajout-->
+        <!--Ajout du contenu du menu 1 -->
+        
         <div class="col-lg-4">
                 <h4>Entrée</h4>
                 <p>Terrine de campagne maison, cornichons</p>
@@ -90,7 +92,8 @@
 <!--Ajout du titre du menu 2-->
 <div class="p-3">
         <h2>Volaille & Douceur</h2>
-        <p>VIANDE BLANCHE</p>
+        <h5>Thème : Pâques, Familial, Professionnel</h5>
+        <small>VIANDE BLANCHE</small>
         <hr>
 </div>
 <!--Ajout de la photo du menu 2-->
@@ -151,7 +154,8 @@
 <!--Ajout du titre du menu 3-->
 <div class="p-3">
         <h2>Jardin & Gourmandise</h2>
-        <p>VEGETARIEN</p>
+        <h5>Thème : Familial, Responsable, Professionnel</h5>
+        <small>VEGETARIEN</small>
         <hr>
 </div>
 <!--Ajout de la photo du menu 3-->
@@ -211,7 +215,8 @@
 <!--Ajout du titre du menu 4-->
 <div class="p-3">
         <h2>Délice & Végétal</h2>
-        <p>VEGAN</p>
+        <h5>Thème : Responsable, Professionnel, Printanier</h5>
+        <small>VEGAN</small>
         <hr>
 </div>
 <!--Ajout de la photo du menu 4-->
@@ -272,7 +277,8 @@
 <!--Ajout du titre du menu 5-->
 <div class="p-3">
         <h2>Fraîcheur & Mer</h2>
-        <p>POISSON</p>
+        <h5>Thème : Professionnel, Printanier</h5>
+        <small>POISSON</small>
         <hr>
 </div>
 <!--Ajout de la photo du menu 5-->
@@ -327,6 +333,72 @@
     </div>
 </div>
 
+<div class="text-center pt-4">
+        <button type="button" class="btn btn-secondary" data-show="ROLE_EMPLOYEE ROLE_ADMIN" data-bs-toggle="modal" data-bs-target="#AjoutMenuModal">Ajouter un menu</button>
+</div>
+
+<!-- Modal ajout menu -->
+<div class="modal fade" id="AjoutMenuModal" tabindex="-1" aria-labelledby="AjoutMenuModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="AjoutMenuModalLabel">Ajout Menu</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <label for="NameMenuInput" class="form-label">Titre</label>
+                <input type="text" class="form-control" id="NameMenuInput" placeholder="Elegance & Bordelais">
+            </div>
+            <div class="mb-3">
+                <label for="RegimeMenuInput" class="form-label">Regime</label>
+                <input type="text" class="form-control" id="RegimeMenuInput" placeholder="Viande rouge">
+            </div>
+            <div class="mb-3">
+                <label for="ThemeMenuInput" class="form-label">Thème</label>
+                <input type="text" class="form-control" id="ThemeMenuInput" placeholder="Noël">
+            </div>
+            <div class="mb-3">
+                <label for="EntreeMenuInput" class="form-label">Entrée</label>
+                <input type="text" class="form-control" id="EntreeMenuInput" placeholder="Carpaccio de boeuf">
+            </div>
+            <div class="mb-3">
+                <label for="PlatMenuInput" class="form-label">Plat</label>
+                <input type="text" class="form-control" id="PlatMenuInput" placeholder="Filet de boeuf sauce au vin rouge">
+            </div>
+            <div class="mb-3">
+                <label for="DessertMenuInput" class="form-label">Dessert</label>
+                <input type="text" class="form-control" id="DessertMenuInput" placeholder="Cannelé bordelais revisité">
+            </div>
+            <div class="mb-3">
+                <label for="NbPersonMenuInput" class="form-label">Nombre minimal de personnes</label>
+                <input type="text" class="form-control" id="NbPersonMenuInput" placeholder="12">
+            </div>
+            <div class="mb-3">
+                <label for="PrixMenuInput" class="form-label">Prix par personnes</label>
+                <input type="text" class="form-control" id="PrixMenuInput" placeholder="50€/personne">
+            </div>
+            <div class="mb-3">
+                <label for="AllergenMenuInput" class="form-label">Allergènes potentiels</label>
+                <input type="text" class="form-control" id="AllergenMenuInput" placeholder="Gluten, lactose, sulfites...">
+            </div>
+            <div class="mb-3">
+                <label for="ConditionsMenuInput" class="form-label">Conditions du menu</label>
+                <input type="text" class="form-control" id="ConditionsMenuInput" placeholder="Commander 14 jours à l'avance, réchauffage, conservation à froid...">
+            </div>
+            <div class="mb-3">
+                <label for="ImageInput" class="form-label">Image</label>
+                <input type="file" class="form-control" id="ImageInput">
+            </div>
+            <div class="text-center pt-3">
+                <button type="button" class="btn btn-secondary">Enregistrer</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal édition menu -->
 <div class="modal fade" id="EditionMenuModal" tabindex="-1" aria-labelledby="EditionMenuModalLabel" aria-hidden="true">

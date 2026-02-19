@@ -4,29 +4,33 @@
         <h1>Connexion</h1>
     </div>
 </div>
-
 <div class="container">
-    <div class="text-center">
-        <span class="icon"><i class="bi bi-person-circle"></i></span>
-    </div>
-    <form id="connexionForm">
-    <div class="mb-3">
-        <label for="EmailInput" class="form-label">E-mail</label>
-        <input type="email" class="form-control" id="EmailInput" placeholder="Veuillez saisir votre adresse mail" name="email">
-        <div class="invalid-feedback">
-            Le mail et le mot de passe ne correspondent pas
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="mb-3">
+                
+                <form id="connexionForm">
+                <div class="mb-3">
+                    <label for="EmailInput" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="EmailInput" placeholder="Veuillez saisir votre adresse mail" name="email">
+                    <div class="invalid-feedback">
+                        Le mail et le mot de passe ne correspondent pas
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="PasswordInput" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="PasswordInput" placeholder="Veuillez saisir votre mot de passe" name="mdp">
+                </div>
+                <div class="text-center pt-3">
+                    <button type="button" class="btn btn-secondary" id="btn-connexion">Se connecter</button>
+                </div>
+                </form>
+
+                <div class="text-center pt-3">
+                    <a href="/inscription">Pas de compte ? Créez en un !</a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="mb-3">
-        <label for="PasswordInput" class="form-label">Mot de passe</label>
-        <input type="password" class="form-control" id="PasswordInput" placeholder="Veuillez saisir votre mot de passe" name="mdp">
-    </div>
-    <div class="text-center pt-3">
-        <button type="button" class="btn btn-secondary" id="btn-connexion">Se connecter</button>
-    </div>
-    </form>
-    <div class="text-center pt-3">
-        <a href="/inscription">Pas de compte ? Créez en un !</a>
     </div>
 </div>
 

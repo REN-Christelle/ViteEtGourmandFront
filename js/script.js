@@ -4,6 +4,7 @@ const roleCookieName = "role";
 const apiUrl = "http://127.0.0.1:8000/api/";
 btnDeconnexion.addEventListener("click", deconnexion);
 
+//** Récupérer l'utilisateur et son token */
 function getRole(){
     return getCookie(roleCookieName);
 }
@@ -56,13 +57,8 @@ function isConnected(){
     }
 }
 
-/* les différents utilisateurs
-disconnected (visteur pas connecté)
-connected
-    - admin
-    - employé
-    - client
-*/
+
+//** Masquage des éléments selon les rôles */
 function showAndHideElementsForRoles() {
   const userConnected = isConnected();
   const role = getRole(); // "ROLE_ADMIN" / "ROLE_EMPLOYEE" / "ROLE_USER"
@@ -111,6 +107,7 @@ function showAndHideElementsForRoles() {
 }
 
 
+//** Interaction d'éléments */
 //Bouton +/- ajout quantité
 function initOrderQuantity() {
   const minPersEl = document.getElementById("minPers");

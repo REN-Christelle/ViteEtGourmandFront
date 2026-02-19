@@ -148,11 +148,38 @@
         </div>
     </div>
     <div class="text-center pt-4">
-        <button type="button" class="btn btn-secondary" data-show="ROLE_EMPLOYEE ROLE_ADMIN" data-bs-toggle="modal" data-bs-target="#EditionPhotoModal">Ajouter une photo</button>
+        <button type="button" class="btn btn-secondary" data-show="ROLE_EMPLOYEE ROLE_ADMIN" data-bs-toggle="modal" data-bs-target="#AjoutPhotoModal">Ajouter une photo</button>
     </div>
 </div>
 
-<!-- Modal édition -->
+<!-- Modal ajout photo plat -->
+<div class="modal fade" id="AjoutPhotoModal" tabindex="-1" aria-labelledby="AjoutPhotoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title fs-5" id="AjoutPhotoModalLabel">Ajout Photo</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <label for="NamePhotoInput" class="form-label">Titre</label>
+                <input type="text" class="form-control" id="NamePhotoInput" placeholder="Tomate farcie">
+            </div>
+            <div class="mb-3">
+                <label for="ImageInput" class="form-label">Image</label>
+                <input type="file" class="form-control" id="ImageInput">
+            </div>
+            <div class="text-center pt-3">
+                <button type="button" class="btn btn-secondary">Enregistrer</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal édition photo plat -->
 <div class="modal fade" id="EditionPhotoModal" tabindex="-1" aria-labelledby="EditionPhotoModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
